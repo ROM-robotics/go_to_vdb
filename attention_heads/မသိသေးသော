@@ -1,0 +1,17 @@
+pad token embedding ကို 0 vector သတ်မှတ်ထားပြီး update မလုပ်ပါ
+
+
+
+position_embeddings: Embedding(512, 768)
+512 = max sequence length
+
+token_type_embeddings: Embedding(2, 768)
+2 = sentence types (A/B)
+segment embedding - ### token က sentence A ရဲ့ token လား, sentence B ရဲ့ token လား” ကို model ကို သိအောင် အကူပြုတာ
+
+LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+Normalization → training stability & faster convergence
+eps=1e-12 → numeric stability
+elementwise_affine=True → scale & shift learnable
+
+
